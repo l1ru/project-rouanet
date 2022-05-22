@@ -3478,18 +3478,16 @@ var Home = function Home() {
     className: "projects"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_js__WEBPACK_IMPORTED_MODULE_1__.Projects, {
     className: "projects"
-  }, projects.map(function (data, index) {
-    if (actual + 3 > index && actual <= index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Project__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        key: index,
-        aproved: data["valor_aprovado"],
-        captado: data["valor_captado"],
-        uf: data["uf"],
-        city: data["municipio"],
-        description: data["resumo"],
-        name: data["nome"]
-      });
-    }
+  }, projects.slice(actual, actual + 3).map(function (data, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Project__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      key: index,
+      aproved: data["valor_aprovado"],
+      captado: data["valor_captado"],
+      uf: data["uf"],
+      city: data["municipio"],
+      description: data["resumo"],
+      name: data["nome"]
+    });
   })), actual >= 3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_styles_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     className: "fa-solid fa-angle-left left",
     onClick: function onClick(e) {

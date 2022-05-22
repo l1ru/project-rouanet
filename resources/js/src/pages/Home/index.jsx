@@ -15,20 +15,18 @@ const Home = () => {
             <GlobalStyles />
             <Styles.Content className={`projects`} >
                 <Styles.Projects className={`projects`} >
-                    {projects.map((data, index) => {
-                        if(actual + 3 > index  && actual <= index) {
-                            return (
-                                <Project
-                                    key={index}
-                                    aproved={data["valor_aprovado"]}
-                                    captado={data["valor_captado"]}
-                                    uf={data["uf"]}
-                                    city={data["municipio"]}
-                                    description={data["resumo"]}
-                                    name={data["nome"]}
-                                />
-                            )
-                        }
+                    {projects.slice(actual, actual + 3).map((data, index) => {
+                        return (
+                            <Project
+                                key={index}
+                                aproved={data["valor_aprovado"]}
+                                captado={data["valor_captado"]}
+                                uf={data["uf"]}
+                                city={data["municipio"]}
+                                description={data["resumo"]}
+                                name={data["nome"]}
+                            />
+                        )
                     })}
                 </Styles.Projects>
                 {actual >= 3 ? <Styles.Icon className="fa-solid fa-angle-left left" onClick={(e) => setActual(actual - 3)} ></Styles.Icon> : ""}
